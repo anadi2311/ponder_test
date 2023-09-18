@@ -1,4 +1,5 @@
-type ExampleEntity @entity {
+type Pool @entity {
   id: String!
-  name: String!
+  address: Bytes!
+  supplyAmount: BigInt!
 }
