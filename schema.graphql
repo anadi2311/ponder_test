@@ -2,4 +2,8 @@ type Pool @entity {
   id: String!
   address: Bytes!
   supplyAmount: BigInt!
+  utilizationRate: BigInt!
+  lastEmittedAt: BigInt!
+  borrowRate: BigInt!
+  borrowAPR: Float!
 }

@@ -26,7 +26,7 @@ export const config: Config = {
         "./abis/Comet_0xd1be.json",
       ],
       address: "0xC3D688B66703497DAA19211EEDFF47F25384CDC3",
-      startBlock: 15331586,
+      startBlock: 18271730,
     },
   ],
 };
