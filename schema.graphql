@@ -1,9 +1,28 @@
+type AssetInfo @entity {
+  id: String!  # Unique identifier for the pool
+  pool_id: String!  # Unique identifier for the pool
+  offset: Int!
+  asset: Bytes!
+  priceFeed: Bytes!
+  scale: BigInt!
+  borrowCollateralFactor: BigInt!
+  liquidateCollateralFactor: BigInt!
+  liquidationFactor: BigInt!
+  supplyCap: BigInt!
+  totalcollateral: BigInt!
+}
+
 type Pool @entity {
-  id: String!
-  address: Bytes!
-  supplyAmount: BigInt!
-  utilizationRate: BigInt!
-  lastEmittedAt: BigInt!
-  borrowRate: BigInt!
-  borrowAPR: Float!
+  id: String!  # Unique identifier for the pool
+  address: Bytes!  # Ethereum address of the pool
+  supplyAmount: BigInt!  # Amount supplied to the pool
+  lastEmittedAt: BigInt!  # Timestamp of the last event
+  utilizationRate: BigInt!  # Utilization rate of the pool
+  borrowRate: BigInt!  # Borrow rate of the pool
+  borrowAPR: Float!  # Borrow APR of the pool
+  supplyRate: BigInt!  # Supply rate of the pool
+  supplyAPR: Float!  # Supply APR of the pool
+  totalSupply: BigInt!  # Total supply in the pool
+  totalBorrow: BigInt!  # Total borrow in the pool
+  assetInfoArray: [AssetInfo!]! @derivedFrom(field: "pool_id") # Array of AssetInfo objects
 }
